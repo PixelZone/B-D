@@ -4,31 +4,20 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Memóriajáték</title>
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="styles.css" />
 </head>
-<body>
-  <div id="startScreen">
-    <button id="startBtn">Játék indítása</button>
+<body class="main-menu">
+  <div class="container">
+    <h1>Memóriajáték</h1>
+    <button onclick="startGame('dominik')">Dominik mód</button>
+    <button onclick="startGame('beata')">Beáta mód</button>
+    <button onclick="startGame('vegyes')">Vegyes mód</button>
   </div>
 
-  <div id="gameMenu" class="hidden">
-    <h2>Válassz játékmódot:</h2>
-    <button class="gameMode" data-mode="Beáta">Beáta</button>
-    <button class="gameMode" data-mode="Dominik">Dominik</button>
-    <button class="gameMode" data-mode="Vegyes">Vegyes</button>
-  </div>
-
-  <div id="gameBoard" class="hidden">
-    <div id="timer">0 perc, 0 másodperc</div>
-    <div id="cardContainer"></div>
-  </div>
-
-  <div id="gameOver" class="hidden">
-    <h2>Gratulálok, nyertél!</h2>
-    <p>Idő: <span id="finalTime"></span></p>
-    <button id="restartBtn">Újra</button>
-  </div>
-
-  <script src="script.js"></script>
+  <script>
+    function startGame(mode) {
+      window.location.href = `game.html?mode=${mode}`;
+    }
+  </script>
 </body>
 </html>
